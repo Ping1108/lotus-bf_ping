@@ -1,0 +1,40 @@
+{
+  "name": "lotus-bf",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:static": "vite --mode static",
+    "build": "vite build",
+    "build:static": "vite build --mode static",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "build:render": "VITE_API_BASE=https://hpc.psy.ntu.edu.tw:5000 vite build --base=/"
+  },
+  "dependencies": {
+    "@niivue/niivue": "^0.62.1",
+    "d3-cloud": "^2.0.0",
+    "d3-drag": "^3.0.1",
+    "d3-force": "^3.0.1",
+    "d3-selection": "^3.0.1",
+    "d3-zoom": "^3.0.1",
+    "nifti-reader-js": "^0.8.0",
+    "pako": "^2.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "tailwindcss": "^4.3.5",
+    "vite": "^7.1.9"
+  }
+}

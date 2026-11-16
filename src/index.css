@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Design tokens: usable as Tailwind utilities (bg-lotus, text-ink, font-display …) */
+@theme {
+  --color-ink: #1b2333;
+  --color-paper: #f4f5f7;
+  --color-line: #e3e6eb;
+  --color-muted: #667085;
+  --color-lotus: #c93d6e;
+  --color-lotus-dark: #a82f5a;
+  --color-lotus-soft: #fbe4ec;
+  --color-leaf: #2f7d6d;
+  --color-leaf-soft: #e1f0ec;
+  --color-night: #131a2c;
+
+  --font-sans: "Public Sans", system-ui, -apple-system, "Segoe UI", "Noto Sans TC", sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible { outline: 2px solid var(--color-lotus); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

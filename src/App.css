@@ -1,0 +1,66 @@
+/* ---------- layout ---------- */
+.app { height: 100vh; display: flex; flex-direction: column; }
+
+.topbar {
+  display: flex; align-items: center; gap: 24px;
+  padding: 14px 20px;
+  background: #fff;
+  border-bottom: 1px solid var(--color-line);
+}
+.brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.brand__mark { width: 34px; height: 34px; }
+.brand__name { font-family: var(--font-display); font-size: 24px; line-height: 1; letter-spacing: -.01em; }
+.brand__tag { font-size: 11.5px; color: var(--color-muted); margin-top: 3px; }
+
+.app__grid { display: flex; flex: 1; padding: 16px 20px 20px; min-height: 0; }
+.app__grid > .card { flex: 1 1 0; min-width: 240px; overflow: auto; }
+
+.resizer { width: 14px; cursor: col-resize; position: relative; user-select: none; touch-action: none; flex-shrink: 0; }
+.resizer::after { content: ''; position: absolute; top: 0; bottom: 0; left: 6px; width: 2px; border-radius: 2px; background: transparent; transition: background .15s; }
+.resizer:hover::after { background: var(--color-line); }
+
+.card { background: #fff; border: 1px solid var(--color-line); border-radius: 12px; padding: 14px 16px; }
+.card__title { font-weight: 600; font-size: 15px; margin: 0 0 10px; }
+.card__section + .card__section { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--color-line); }
+
+/* ---------- controls ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font: 600 12.5px/1 var(--font-sans);
+  padding: 7px 11px; border-radius: 8px;
+  border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+  background: var(--color-lotus); color: #fff;
+}
+.btn:hover { background: var(--color-lotus-dark); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn--ghost { background: #fff; color: var(--color-ink); border-color: var(--color-line); }
+.btn--ghost:hover { background: var(--color-paper); }
+.btn--op { background: var(--color-paper); color: var(--color-ink); font-family: ui-monospace, Menlo, monospace; min-width: 38px; }
+.btn--op:hover { background: var(--color-line); }
+
+.input {
+  padding: 8px 11px; border-radius: 8px; min-width: 0;
+  border: 1px solid var(--color-line); background: #fff; color: var(--color-ink);
+  font: inherit;
+}
+.input:focus { outline: none; border-color: var(--color-lotus); box-shadow: 0 0 0 3px var(--color-lotus-soft); }
+.input--sm { padding: 5px 8px; font-size: 13px; }
+
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--color-line); margin: -2px 0 14px; }
+.tab { padding: 8px 12px; font-weight: 600; color: var(--color-muted); border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--color-ink); border-bottom-color: var(--color-lotus); }
+
+.qb { flex: 1; display: flex; align-items: center; gap: 8px; min-width: 0; }
+.qb__input { flex: 1; font-size: 15px; padding: 9px 13px; }
+.qb__ops { display: flex; gap: 4px; flex-shrink: 0; }
+
+@media (max-width: 1023px) {
+  .app { height: auto; min-height: 100%; }
+  .qb__input { flex-basis: 100%; }
+  .topbar { flex-direction: column; align-items: stretch; gap: 12px; }
+  .qb { flex-wrap: wrap; }
+  .app__grid { flex-direction: column; gap: 14px; padding: 12px; }
+  .app__grid > .card { flex-basis: auto !important; }
+  .app__grid > .card:first-child { max-height: 320px; }
+  .resizer { display: none; }
+}
